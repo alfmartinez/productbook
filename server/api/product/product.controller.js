@@ -17,7 +17,10 @@ exports.index = function(req, res) {
 
 // Get a single product
 exports.show = function(req, res) {
-  Product.findById(req.params.id, function(err, product) {
+  Product.findOne({
+    _id: req.params.id,
+    owner: req.user._id
+  }, function(err, product) {
     if (err) {
       return handleError(res, err);
     }

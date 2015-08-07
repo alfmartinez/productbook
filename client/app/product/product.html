@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="products">
-        <div class="product" ng-repeat="product in products">{{product.name}}</div>
+        <div class="product" ng-repeat="product in products"><a href="/product/{{product._id}}" tooltip="{{product.info}}">{{product.name}}</a></div>
       </div>
       <div class="newproduct">
         <form novalidate class="simple-form">
