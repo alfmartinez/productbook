@@ -5,9 +5,12 @@ var mongoose = require('mongoose'),
 
 var InterviewSchema = new Schema({
   number: Number,
+  section: String,
+  title: String,
   explanation: String,
   type: String,
   question: String,
+  next: Number,
   answers: {}
 });
 

@@ -11,32 +11,67 @@ var Interview = require('../api/interview/interview.model');
 
 Interview.find({}).remove(function() {
   Interview.create({
-    number: 0,
-    explanation: 'Les projets en greenfield et brownfield différent.',
-    type: 'radio',
-    question: 'Votre produit part-il d\'un existant ?',
-    answers: {
-      'Oui': 1,
-      'Non': 2
-    }
-  }, {
-    number: 1,
-    explanation: 'Suivant le type d\'existant, la démarche doit être adaptée.',
-    type: 'choice',
-    question: 'De quels types d\'existants votre produit doit il tenir compte ?',
-    answers: {
-      'Application existante': 3,
-      'Classeur Excel pour un calculateur': 4
-    }
-  }, {
-    number: 2,
-    explanation: 'La question miracle',
-    type: 'text',
-    question: 'Maintenant je voudrai vous poser une question bizarre. Imaginez que pendant que vous dormez la nuit prochaine et que toute la maison est calme, un miracle se produit. Le miracle consiste en ce que le problème qui vous a amené ici est résolu. Cependant, comme vous êtes endormi, vous ne savez pas que le miracle est arrivé. Alors, quand vous vous réveillez demain matin, qu’est-ce qui sera différent qui vous dira qu’un miracle a eu lieu et que le problème qui vous a amené ici est résolu ?',
-    answers: {}
-  }, function() {
-    console.log('finish populating interview questions');
-  })
+      number: 0,
+      sectionOrder: 1,
+      section: 'Origine',
+      title: 'Point de départ',
+      explanation: 'Les projets en greenfield et brownfield différent.',
+      type: 'radio',
+      question: 'Votre produit part-il d\'un existant ?',
+      answers: [{
+        value: 'Oui',
+        next: 1
+      }, {
+        value: 'Non',
+        next: 2
+      }]
+    }, {
+      number: 1,
+      sectionOrder: 2,
+      section: 'Inventaire',
+      title: 'Inventaire de l\'existant',
+      explanation: 'Suivant le type d\'existant, la démarche doit être adaptée.',
+      type: 'choice',
+      question: 'De quels types d\'existants votre produit doit il tenir compte ?',
+      next: 2,
+      answers: [{
+        value: 'Application existante',
+        next: 3
+      }, {
+        value: 'Classeur Excel pour un calculateur',
+        next: 4
+      }]
+    }, {
+      number: 2,
+      sectionOrder: 3,
+      section: 'Solution',
+      title: 'Focus sur la solution',
+      explanation: 'La question miracle',
+      type: 'text',
+      question: 'Maintenant je voudrai vous poser une question bizarre. Imaginez que pendant que vous dormez la nuit prochaine et que toute la maison est calme, un miracle se produit. Le miracle consiste en ce que le problème qui vous a amené ici est résolu. Cependant, comme vous êtes endormi, vous ne savez pas que le miracle est arrivé. Alors, quand vous vous réveillez demain matin, qu’est-ce qui sera différent qui vous dira qu’un miracle a eu lieu et que le problème qui vous a amené ici est résolu ?',
+      answers: {}
+    }, {
+      number: 3,
+      sectionOrder: 2,
+      section: 'Inventaire',
+      title: 'Application existante',
+      explanation: 'Lors de la reprise d\'une application existante ...',
+      type: 'information',
+      question: 'Maintenant je voudrai vous poser une question bizarre. Imaginez que pendant que vous dormez la nuit prochaine et que toute la maison est calme, un miracle se produit. Le miracle consiste en ce que le problème qui vous a amené ici est résolu. Cependant, comme vous êtes endormi, vous ne savez pas que le miracle est arrivé. Alors, quand vous vous réveillez demain matin, qu’est-ce qui sera différent qui vous dira qu’un miracle a eu lieu et que le problème qui vous a amené ici est résolu ?',
+      answers: {}
+    }, {
+      number: 4,
+      sectionOrder: 2,
+      section: 'Inventaire',
+      title: 'Classeur Excel',
+      explanation: 'Classeur Excel, problèmes de transcription',
+      type: 'information',
+      question: 'Maintenant je voudrai vous poser une question bizarre. Imaginez que pendant que vous dormez la nuit prochaine et que toute la maison est calme, un miracle se produit. Le miracle consiste en ce que le problème qui vous a amené ici est résolu. Cependant, comme vous êtes endormi, vous ne savez pas que le miracle est arrivé. Alors, quand vous vous réveillez demain matin, qu’est-ce qui sera différent qui vous dira qu’un miracle a eu lieu et que le problème qui vous a amené ici est résolu ?',
+      answers: {}
+    },
+    function() {
+      console.log('finish populating interview questions');
+    })
 });
 
 User.find({}).remove(function() {
@@ -58,9 +93,7 @@ User.find({}).remove(function() {
         name: 'Development Tools',
         info: 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.',
         owner: testUser._id,
-        answers: {
-          1: 'Yes'
-        }
+        answers: {}
       }, {
         name: 'Server and Client integration',
         info: 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.',

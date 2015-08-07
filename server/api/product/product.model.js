@@ -8,7 +8,10 @@ var ProductSchema = new Schema({
   info: String,
   active: Boolean,
   owner: Schema.Types.ObjectId,
-  answers: Schema.Types.Mixed
+  answers: Schema.Types.Mixed,
+  currentInterview: Number,
+  passedInterviews: [],
+  pendingInterviews: []
 });
 
 module.exports = mongoose.model('Product', ProductSchema);

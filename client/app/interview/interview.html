@@ -1,5 +1,25 @@
-<div class="interview">  
+<div class="interview col-md-8">
+  <h2 class="section">{{step.section}}</h3>
+  <h3 class="title">{{step.title}}</h3>
   <div class="explanation">{{step.explanation}}</div>
   <div class="question">{{step.question}}</div>
-  <div class="answer">{{subject.answers[step.number]}}</div>
+  <div ng-switch on="step.type">
+    <div ng-switch-when="radio">
+      <div ng-include="'components/questions/radio.html'" ></div>
+    </div>
+    <div ng-switch-when="choice">
+      <div ng-include="'components/questions/choice.html'" ></div>
+    </div>
+    <div ng-switch-when="information">
+      <div ng-include="'components/questions/information.html'" ></div>
+    </div>
+  </div>
+  <input type="submit" ng-click="answer()" />
+</div>
+<div class="col-md-4">
+  <ul>
+    <li ng-repeat='interview in subject.passedInterviews' >
+      <a href="#" ng-click="gotoStep(interview);">{{ interview.title }}</a>
+    </li>
+  </ul>
 </div>

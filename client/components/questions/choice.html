@@ -1,0 +1,3 @@
+<span ng-repeat="answer in step.answers">
+  <input type="checkbox" value="{{ answer.value }}" ng-model="subject.answers[step.number][answer.value]"/> {{answer.value}}</br>
+</span>
