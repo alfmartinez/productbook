@@ -7,6 +7,37 @@
 
 var Product = require('../api/product/product.model');
 var User = require('../api/user/user.model');
+var Interview = require('../api/interview/interview.model');
+
+Interview.find({}).remove(function() {
+  Interview.create({
+    number: 0,
+    explanation: 'Les projets en greenfield et brownfield différent.',
+    type: 'radio',
+    question: 'Votre produit part-il d\'un existant ?',
+    answers: {
+      'Oui': 1,
+      'Non': 2
+    }
+  }, {
+    number: 1,
+    explanation: 'Suivant le type d\'existant, la démarche doit être adaptée.',
+    type: 'choice',
+    question: 'De quels types d\'existants votre produit doit il tenir compte ?',
+    answers: {
+      'Application existante': 3,
+      'Classeur Excel pour un calculateur': 4
+    }
+  }, {
+    number: 2,
+    explanation: 'La question miracle',
+    type: 'text',
+    question: 'Maintenant je voudrai vous poser une question bizarre. Imaginez que pendant que vous dormez la nuit prochaine et que toute la maison est calme, un miracle se produit. Le miracle consiste en ce que le problème qui vous a amené ici est résolu. Cependant, comme vous êtes endormi, vous ne savez pas que le miracle est arrivé. Alors, quand vous vous réveillez demain matin, qu’est-ce qui sera différent qui vous dira qu’un miracle a eu lieu et que le problème qui vous a amené ici est résolu ?',
+    answers: {}
+  }, function() {
+    console.log('finish populating interview questions');
+  })
+});
 
 User.find({}).remove(function() {
   User.create({
