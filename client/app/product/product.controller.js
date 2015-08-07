@@ -14,5 +14,5 @@ angular.module('productbookApp')
         .then(function(response) {
           $scope.products.push(response.data);
         });
-    }
+    };
   });
