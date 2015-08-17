@@ -13,7 +13,8 @@ questions:
 
     Et un lien ici : [Le Monde.fr](http://lemonde.fr)
 
-    Et une image là : ![Google](https://www.google.fr/images/nav_logo225.png "Logo Google")
+    Et une image là : ![Google][google]
+    [google]: https://www.google.fr/images/nav_logo225.png "Logo Google"
   type: radio
   question: Votre produit part-il d'un **existant** ?
   answers:
@@ -44,7 +45,7 @@ questions:
     sectionOrder: 3
     section: Solution
     title: Focus sur la solution
-    explanation: '###La question miracle'
+    explanation: La question miracle
     type: text
     question:
       Maintenant je voudrai vous poser une question bizarre.
