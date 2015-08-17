@@ -15,7 +15,7 @@ Interview.find({}).remove(function() {
       sectionOrder: 1,
       section: 'Origine',
       title: 'Point de départ',
-      explanation: 'Les projets en greenfield et brownfield différent.',
+      explanation: 'Les *projets* en greenfield et brownfield différent. ![Google](https://www.google.fr/images/nav_logo225.png)',
       type: 'radio',
       question: 'Votre produit part-il d\'un existant ?',
       answers: [{

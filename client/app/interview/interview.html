@@ -1,8 +1,8 @@
 <div class="interview col-md-8">
   <h2 class="section">{{step.section}}</h3>
   <h3 class="title">{{step.title}}</h3>
-  <div class="explanation">{{step.explanation}}</div>
-  <div class="question">{{step.question}}</div>
+  <div class="explanation" btf-markdown="step.explanation"></div>
+  <div class="question" btf-markdown="step.question"></div>
   <div ng-switch on="step.type">
     <div ng-switch-when="radio">
       <div ng-include="'components/questions/radio.html'" ></div>
