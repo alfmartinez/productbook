@@ -3,10 +3,10 @@
 angular.module('productbookApp')
   .controller('NavbarCtrl', function($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
+      'title': 'Accueil',
       'link': '/'
     }, {
-      'title': 'Products',
+      'title': 'Produits',
       'link': '/product'
     }];
 
