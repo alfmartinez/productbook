@@ -1,6 +1,6 @@
 'use strict';
 
-var mailer = require('../mailer/mailer');
+var mailer = require('../mailer');
 var config = require('../../config/environment');
 
 function adminShouldBeNotified(doc) {
