@@ -4,7 +4,7 @@ var path = require('path');
 var _ = require('lodash');
 
 function requiredProcessEnv(name) {
-  if(!process.env[name]) {
+  if (!process.env[name]) {
     throw new Error('You must set the ' + name + ' environment variable');
   }
   return process.env[name];
@@ -40,7 +40,8 @@ var all = {
       }
     }
   },
-
+  admin_email: process.env.ADMIN_EMAIL,
+  sendgrid_api_key: process.env.SENDGRID_API_KEY
 };
 
 // Export the config object based on the NODE_ENV

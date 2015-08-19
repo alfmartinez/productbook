@@ -15,7 +15,6 @@ var itwContent = fs.readFileSync(__dirname + '/questions.yml', 'utf8');
 var productInterview = YAML.safeLoadAll(
   itwContent,
   function(productInterview) {
-    console.log(productInterview.questions);
     Interview.find({}).remove(function() {
       Interview.create(productInterview.questions,
         function() {
@@ -29,13 +28,15 @@ User.find({}).remove(function() {
     provider: 'local',
     name: 'Test User',
     email: 'test@test.com',
-    password: 'test'
+    password: 'test',
+    creationNotified: true
   }, {
     provider: 'local',
     role: 'admin',
     name: 'Admin',
     email: 'admin@admin.com',
-    password: 'admin'
+    password: 'admin',
+    creationNotified: true
   }, function(err, testUser, adminUser) {
     console.log('finished populating users');
     Product.find({}).remove(function() {
