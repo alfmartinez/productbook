@@ -29,13 +29,15 @@ User.find({}).remove(function() {
     provider: 'local',
     name: 'Test User',
     email: 'test@test.com',
-    password: 'test'
+    password: 'test',
+    creationNotified: true
   }, {
     provider: 'local',
     role: 'admin',
     name: 'Admin',
     email: 'admin@admin.com',
-    password: 'admin'
+    password: 'admin',
+    creationNotified: true
   }, function(err, testUser, adminUser) {
     console.log('finished populating users');
     Product.find({}).remove(function() {

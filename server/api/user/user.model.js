@@ -3,7 +3,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
-
+var userCreationListener = require(
+  '../../components/listeners/userCreation.listener');
 var UserSchema = new Schema({
   name: String,
   email: {
@@ -16,7 +17,8 @@ var UserSchema = new Schema({
   },
   hashedPassword: String,
   provider: String,
-  salt: String
+  salt: String,
+  creationNotified: Boolean
 });
 
 /**
@@ -109,9 +111,7 @@ UserSchema
  * Post-save hook
  */
 UserSchema
-  .post('save', function(doc) {
-
-  });
+  .post('save', userCreationListener);
 
 /**
  * Methods
