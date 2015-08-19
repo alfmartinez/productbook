@@ -15,7 +15,6 @@ var itwContent = fs.readFileSync(__dirname + '/questions.yml', 'utf8');
 var productInterview = YAML.safeLoadAll(
   itwContent,
   function(productInterview) {
-    console.log(productInterview.questions);
     Interview.find({}).remove(function() {
       Interview.create(productInterview.questions,
         function() {
