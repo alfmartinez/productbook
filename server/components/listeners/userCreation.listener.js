@@ -1,11 +1,15 @@
 'use strict';
 
+var mailer = require('../mailer/mailer');
+var config = require('../../config/environment');
+
 function adminShouldBeNotified(doc) {
   return !doc.creationNotified;
 }
 
 function notifyAdmin(doc) {
-  console.log('Utilisateur %s créé!', doc.name);
+  mailer(config.admin_email, 'Création utilisateur',
+    'Utilisateur ' + doc.name + ' créé!');
   doc.creationNotified = true;
 }
 
