@@ -2,10 +2,11 @@
 
 var nodemailer = require("nodemailer");
 var transporter = require("./sendGridTransporter");
+var config = require('../../config/environment');
 
 var mailer = function(to, subject, content) {
   var mailOptions = {
-    from: 'ProductBook <no-reply@productbook.com>',
+    from: config.sender_address,
     to: to,
     subject: subject,
     text: content,

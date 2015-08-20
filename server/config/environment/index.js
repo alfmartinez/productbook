@@ -41,7 +41,8 @@ var all = {
     }
   },
   admin_email: process.env.ADMIN_EMAIL,
-  sendgrid_api_key: process.env.SENDGRID_API_KEY
+  sendgrid_api_key: process.env.SENDGRID_API_KEY,
+  sender_address: process.env.SENDER_ADDRESS
 };
 
 // Export the config object based on the NODE_ENV
