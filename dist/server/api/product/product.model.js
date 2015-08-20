@@ -11,7 +11,8 @@ var ProductSchema = new Schema({
   answers: Schema.Types.Mixed,
   currentInterview: Number,
   passedInterviews: [],
-  pendingInterviews: []
+  pendingInterviews: [],
+  artifacts: Schema.Types.Mixed
 });
 
 module.exports = mongoose.model('Product', ProductSchema);
