@@ -42,6 +42,17 @@ angular.module('productbookApp')
           renderInterview($scope.subject);
         };
 
+        $scope.getArtifacts = function(step) {
+          var result = [];
+          if (step) {
+            step.displayArtifacts.forEach(function(item) {
+              result.push('> *' + $scope.subject.artifacts[item] +
+                '*');
+            });
+          }
+          return result;
+        }
+
         function renderInterview(subject) {
           if (subject) {
             if (typeof subject.currentInterview === 'undefined') {

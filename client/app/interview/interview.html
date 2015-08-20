@@ -1,6 +1,7 @@
 <div class="interview col-md-8">
   <h2 class="section">{{step.section}}</h3>
   <h3 class="title">{{step.title}}</h3>
+  <div class="recall" ng-repeat="artifact in getArtifacts(step)" btf-markdown="artifact" ></div>
   <div class="explanation" btf-markdown="step.explanation"></div>
   <div class="question" btf-markdown="step.question"></div>
   <div ng-switch on="step.type">
@@ -12,6 +13,9 @@
     </div>
     <div ng-switch-when="information">
       <div ng-include="'components/questions/information.html'" ></div>
+    </div>
+    <div ng-switch-when="textarea">
+      <div ng-include="'components/questions/textarea.html'" ></div>
     </div>
   </div>
   <input type="submit" ng-click="answer()" />

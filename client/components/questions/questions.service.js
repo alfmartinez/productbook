@@ -42,6 +42,9 @@ angular.module('productbookApp')
         case 'information':
           nextStep = getNextPending(subject);
           break;
+        case 'textarea':
+          nextStep = step.next;
+          break;
         default:
           throw 'Not Implemented';
       }
