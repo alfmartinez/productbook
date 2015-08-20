@@ -11,6 +11,7 @@ function notifyAdmin(doc) {
   mailer(config.admin_email, 'Création utilisateur',
     'Utilisateur ' + doc.name + ' créé!');
   doc.creationNotified = true;
+  doc.save();
 }
 
 module.exports = function(doc) {
