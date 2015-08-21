@@ -1,0 +1,10 @@
+<div ng-repeat="answer in step.answers">
+  <div ng-hide="editorEnabled">
+      {{subject.artifacts[step.artifact][answer.value]}}
+      <a href="#" ng-click="editorEnabled=!editorEnabled">Corriger</a>
+    </div>
+    <div ng-show="editorEnabled">
+      <input type="text" ng-model="subject.artifacts[step.artifact][answer.value]" size="80">
+      <a href="#" ng-click="editorEnabled=!editorEnabled">C'est mieux ?</a>
+    </div>
+</div>

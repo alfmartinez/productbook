@@ -35,3 +35,102 @@ questions:
     -
       value: 3
       label: Critère 3
+  next: 2
+-
+  number: 2
+  sectionOrder: 1
+  section: Proposition
+  title: Validation d'un objectif S
+  explanation: |
+    Pour être efficace, un critère de succès doit posséder plusieurs caractéristiques.
+
+    Tout d'abord, il doit être suffisamment précis sur le résultat attendu et s'attacher à n'observer qu'un élément au lieu de plusieurs.
+  type: actionabletexttype
+  question: Votre objectif est-il spécifique ? S'il est trop vague ou concerne plusieurs choses à la fois, vous pouvez le corriger ci-dessous.
+  artifact: successFactors
+  next: 3
+  answers:
+    -
+      value: 1
+      label: Critère 1
+-
+  number: 3
+  sectionOrder: 1
+  section: Proposition
+  title: Validation d'un objectif SM
+  explanation: |
+    Pour être efficace, un critère de succès doit posséder plusieurs caractéristiques.
+
+    Difficile de savoir que l'on est arrivé à notre destination sans pouvoir le constater objectivement.
+    L'objectif doit être mesurable et donc disposer d'un instrument de mesure.
+    Il peut s'agir d'un outil existant, externe ou interne au projet ou d'un outil
+    qui sera construit dans le cadre du projet.
+  type: actionabletexttype
+  question: Votre objectif est-il mesurable ? Si ce n'est pas le cas, vous pouvez le corriger ci-dessous.
+  artifact: successFactors
+  next: 4
+  answers:
+    -
+      value: 1
+      label: Critère 1
+-
+  number: 4
+  sectionOrder: 1
+  section: Proposition
+  title: Validation d'un objectif SMA
+  explanation: |
+    Pour être efficace, un critère de succès doit posséder plusieurs caractéristiques.
+
+    Savoir quand s'arrêter, c'est important pour ne pas épuiser ses ressources.
+    Si l'on veut poursuivre ensuite, il sera toujours temps de se fixer
+    un second objectif de performance et ainsi de suite...
+  type: actionabletexttype
+  question: Votre critère est-il atteignable ? Si ce n'est pas le cas, vous pouvez le corriger ci-dessous.
+  artifact: successFactors
+  next: 5
+  answers:
+    -
+      value: 1
+      label: Critère 1
+-
+  number: 5
+  sectionOrder: 1
+  section: Proposition
+  title: Validation d'un objectif SMAR
+  explanation: |
+    Pour être efficace, un critère de succès doit posséder plusieurs caractéristiques.
+
+    Aussi longue soit-elle, chaque route commence par une série de petits pas.
+    Plus un projet est ambitieux et plus le nombre d'éléments à prendre en compte augmente
+    et la complexité globale du projet devient difficile à gérer.
+    Commencer par un premier objectif réaliste et raisonnable permet d'assurer
+    que les contraintes de complexité seront traités progressivement.
+  type: actionabletexttype
+  question: Votre objectif est-il réaliste ? Si ce n'est pas le cas, vous pouvez le corriger ci-dessous.
+  artifact: successFactors
+  next: 6
+  answers:
+    -
+      value: 1
+      label: Critère 1
+-
+  number: 6
+  sectionOrder: 1
+  section: Proposition
+  title: Validation d'un objectif SMART
+  explanation: |
+    Pour être efficace, un critère de succès doit posséder plusieurs caractéristiques.
+
+    Rattacher un objectif a une notion de temps permet de le rendre plus réel.
+    Il ne s'agit plus uniquement d'un objectif qui devra être réalisée "un jour",
+    mais d'un défi concret qui vous aidera à prioriser vos options.
+    A l'inverse, ne soyez pas trop exigeant sur la dimension temporelle, et évitez
+    de vous mettre en danger inutilement. Gardez l'aspect réaliste en tête.
+  type: actionabletexttype
+  question: Votre objectif a-t'il une limite dans sa durée ? Si ce n'est pas le cas, vous pouvez lui en donner une ci-dessous (par exemple, dans 3 mois).
+  artifact: successFactors
+  next: 7
+  answers:
+    -
+      value: 1
+      label: Critère 1

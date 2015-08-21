@@ -44,6 +44,7 @@ angular.module('productbookApp')
           break;
         case 'textarea':
         case 'textrows':
+        case 'actionabletexttype':
           nextStep = step.next;
           break;
         default:
