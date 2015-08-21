@@ -13,7 +13,8 @@ var InterviewSchema = new Schema({
   next: Number,
   answers: {},
   artifact: String,
-  displayArtifacts: []
+  displayArtifacts: [],
+  preActions: []
 });
 
 module.exports = mongoose.model('Interview', InterviewSchema);

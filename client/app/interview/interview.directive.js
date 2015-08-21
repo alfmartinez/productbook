@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('productbookApp')
-  .directive('interview', function($http) {
+  .directive('interview', function($http, preStepActions) {
     return {
       templateUrl: 'app/interview/interview.html',
       restrict: 'E',
@@ -46,11 +46,16 @@ angular.module('productbookApp')
           var result = [];
           if (step) {
             step.displayArtifacts.forEach(function(item) {
-              result.push('> *' + $scope.subject.artifacts[item] +
-                '*');
+              result.push($scope.subject.artifacts[item]);
             });
           }
           return result;
+        }
+
+        function executePreActions(step, subject) {
+          step.preActions.forEach(function(action) {
+            preStepActions.execute(action, step, subject);
+          });
         }
 
         function renderInterview(subject) {
@@ -60,6 +65,7 @@ angular.module('productbookApp')
             }
             $http.get('/api/interviews/' + subject.currentInterview).success(
               function(step) {
+                executePreActions(step, subject);
                 $scope.step = step;
               });
           }
