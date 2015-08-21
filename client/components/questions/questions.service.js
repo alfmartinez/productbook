@@ -43,6 +43,7 @@ angular.module('productbookApp')
           nextStep = getNextPending(subject);
           break;
         case 'textarea':
+        case 'textrows':
           nextStep = step.next;
           break;
         default:

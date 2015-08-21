@@ -21,7 +21,17 @@ questions:
     Quels sont les critères de succès de votre but ?
     Comment saurez vous que votre objectif a été atteint ?
     Pouvez-vous le mesurer ?
-  type: textarea
-  question: Quels sont vos critères de succès (un par ligne) ?
+  type: textrows
+  question: Quels sont vos 3 critères de succès ?
   displayArtifacts: [goal]
   artifact: successFactors
+  answers:
+    -
+      value: 1
+      label: Critère 1
+    -
+      value: 2
+      label: Critère 2
+    -
+      value: 3
+      label: Critère 3
