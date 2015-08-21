@@ -7,21 +7,6 @@
 
 var Product = require('../api/product/product.model');
 var User = require('../api/user/user.model');
-var Interview = require('../api/interview/interview.model');
-
-var YAML = require('js-yaml');
-var fs = require('fs');
-var itwContent = fs.readFileSync(__dirname + '/questions.yml', 'utf8');
-var productInterview = YAML.safeLoadAll(
-  itwContent,
-  function(productInterview) {
-    Interview.find({}).remove(function() {
-      Interview.create(productInterview.questions,
-        function() {
-          console.log('finish populating interview questions');
-        })
-    });
-  });
 
 User.find({}).remove(function() {
   User.create({
