@@ -7,7 +7,7 @@ questions:
   section: Proposition
   title: Cible
   explanation: |
-    Vous avez un but, une idée, un besoin, une raison pour laquelle vous voulez voir pris en compte.
+    Vous avez un but, une idée, un besoin, une raison que vous voulez voir pris en compte.
   type: textarea
   question: Quel est votre principal objectif ?
   artifact: goal
