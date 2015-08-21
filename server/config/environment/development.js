@@ -8,5 +8,6 @@ module.exports = {
     uri: 'mongodb://localhost/productbook-dev'
   },
 
-  seedDB: true
+  seedDB: true,
+  seedDBQuestions: true
 };
