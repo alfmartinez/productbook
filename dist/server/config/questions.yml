@@ -7,7 +7,7 @@ questions:
   section: Proposition
   title: Cible
   explanation: |
-    Vous avez un but, une idée, un besoin, une raison pour laquelle vous voulez voir pris en compte.
+    Vous avez un but, une idée, un besoin, une raison que vous voulez voir pris en compte.
   type: textarea
   question: Quel est votre principal objectif ?
   artifact: goal
@@ -134,3 +134,15 @@ questions:
     -
       value: 1
       label: Critère 1
+-
+  number: 7
+  sectionOrder: 2
+  preActions: [initImpactMap]
+  section: Carte d'impact
+  title: Centre de la Carte d'impact
+  explanation: |
+    La carte d'impact permet de découvrir et collecter les options disponibles
+    pour atteindre notre premier objectif.
+  displayArtifacts: [impactMap]
+  type: information
+  next: 8
