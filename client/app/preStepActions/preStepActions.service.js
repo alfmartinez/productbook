@@ -15,7 +15,14 @@ angular.module('productbookApp')
     function initImpactMap(step, subject) {
       subject.artifacts.impactMap = {
         type: 'impactMap',
-        why: subject.artifacts.successFactors[1]
+        name: subject.artifacts.successFactors[1],
+        class: "why",
+        radius: 6,
+        children: [{
+          name: "Qui ?",
+          class: "who",
+          radius: 4
+        }]
       };
     }
 
